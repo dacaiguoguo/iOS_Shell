@@ -1,5 +1,5 @@
-# iOS_Shell
-iOS_Shell
+
+####递归目录压缩图片宽度640，适用UI给的图比较大的时候，预览速度慢的时候
 ```
 function zippngTo640Width(){ 
 	for file in `ls $1 | grep png` 
@@ -14,7 +14,7 @@ function zippngTo640Width(){
 	done
 }
 ```
-
+#### 把~/Library/MobileDevice/Provisioning\ Profiles 下的文件转为可以看懂的plist文件
 ```
 function provisioningFileToPlist(){
 	pwddir=`pwd`
@@ -30,7 +30,7 @@ function provisioningFileToPlist(){
 	cd $pwddir
 }
 ```
-
+####递归目录 查找xib中的系统加粗字体
 ```
 function findxibBoldSystemFontAll(){ 
 	for file in `ls $1 | grep xib` 
@@ -45,7 +45,7 @@ function findxibBoldSystemFontAll(){
 	done
 }
 ```
-
+####递归目录 查找xib中的系统字体
 ```
 function findxibSystemFontAll(){ 
 	for file in `ls $1 | grep xib` 
@@ -60,7 +60,7 @@ function findxibSystemFontAll(){
 	done
 }
 ```
-
+####iOS 8 以下 Autolayout不能用Margin 递归目录  查找xib中的Margin
 ```
 function findxibMarginfirstAll(){ 
 	for file in `ls $1 | grep xib` 
