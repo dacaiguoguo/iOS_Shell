@@ -75,3 +75,8 @@ function findxibMarginfirstAll(){
 	done
 }
 ```
+
+###显示app的签名信息
+```
+codesign --display -r- Payload/test.app 
+```
