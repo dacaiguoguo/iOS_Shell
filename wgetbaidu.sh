@@ -1,0 +1,3 @@
+wget 下载 百度网盘文件
+
+wget 'http://lx.cdn.baidupcs.com/file/99b22d57e71bdc86b8fbe113dfb9f739?bkt=p2-nj-638&xcode=324dd88a9d2bd625704e270870994e1b10bc30ccc5480581d796109456bd1356&fid=3657458272-250528-819951192935751&time=1432109208&sign=FDTAXERLBH-DCb740ccc5511e5e8fedcff06b081203-sVC055LYVYLRsfMLVcAQ9SV%2B1mQ%3D&to=hc&fm=Nan,B,T,t&sta_dx=2180&sta_cs=690&sta_ft=dmg&sta_ct=6&newver=1&newfm=1&flow_ver=3&sl=81199180&expires=8h&rt=sh&r=537379126&mlogid=1093747484&vuk=3657458272&vbdid=1855355706&fin=xcode_5.1.1.dmg&slt=pm&uta=0' -O xcode511.dmg
