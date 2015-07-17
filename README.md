@@ -80,3 +80,4 @@ function findxibMarginfirstAll(){
 ```
 codesign --display -r- Payload/test.app 
 ```
+vps
