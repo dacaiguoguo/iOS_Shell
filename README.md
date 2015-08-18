@@ -81,3 +81,10 @@ function findxibMarginfirstAll(){
 codesign --display -r- Payload/test.app 
 ```
 vps
+
+
+###linkmap.js 运行
+在centos上安装node.js 然后运行下面命令
+```
+node linkmap.js /home/centos/Lvmm-LinkMap-normal-arm64.txt -hl
+```
