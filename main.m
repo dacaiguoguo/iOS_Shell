@@ -1,10 +1,5 @@
 //
 //  main.m
-//  Lvmm
-//
-//  Created by zhouyi on 14-2-27.
-//  Copyright (c) 2014年 Lvmama. All rights reserved.
-//
 
 #import <UIKit/UIKit.h>
 
@@ -89,29 +84,7 @@ int main(int argc, char * argv[])
 {
     is_enc();
     is_root();
-#ifdef DEBUG
-    #if TARGET_IPHONE_SIMULATOR
-            @try {
-                @autoreleasepool {
-                    return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-                }
-            }
-            @catch (NSException *exception) {
-                LVLog(@"%@\n%@",exception,[exception callStackSymbols]);
-            }
-            @finally {
-                
-            }
-    #else
-        @autoreleasepool {
-            return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
-        }
-    #endif
-#else
     @autoreleasepool {
         return UIApplicationMain(argc, argv, nil, NSStringFromClass([AppDelegate class]));
     }
-#endif
-
-
 }
