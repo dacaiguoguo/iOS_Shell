@@ -9,8 +9,8 @@
 #import <Foundation/Foundation.h>
 
 @interface NSString(FindMethod)
-- (NSRange)rangeOfString:( NSString * _Nullable )searchString atIndex:(NSUInteger)index fromIndex:(NSUInteger)fromIndex;
-- (NSRange)rangeOfString:( NSString * _Nullable )searchString options:(NSStringCompareOptions)mask atIndex:(NSUInteger)index fromIndex:(NSUInteger)fromIndex;
-- (NSRange)rangeOfString:( NSString * _Nullable )searchString options:(NSStringCompareOptions)mask range:(NSRange)searchRange atIndex:(NSUInteger)index fromIndex:(NSUInteger)fromIndex;
-- (NSRange)rangeOfString:( NSString * _Nullable )searchString options:(NSStringCompareOptions)mask range:(NSRange)searchRange locale:(nullable NSLocale *)locale atIndex:(NSUInteger)index fromIndex:(NSUInteger)fromIndex;
+- (NSRange)rangeOfString:(nonnull NSString *)searchString atIndex:(NSUInteger)index fromIndex:(NSUInteger)fromIndex;
+- (NSRange)rangeOfString:(nonnull NSString *)searchString options:(NSStringCompareOptions)mask atIndex:(NSUInteger)index fromIndex:(NSUInteger)fromIndex;
+- (NSRange)rangeOfString:(nonnull NSString *)searchString options:(NSStringCompareOptions)mask range:(NSRange)searchRange atIndex:(NSUInteger)index fromIndex:(NSUInteger)fromIndex;
+- (NSRange)rangeOfString:(nonnull NSString *)searchString options:(NSStringCompareOptions)mask range:(NSRange)searchRange locale:(nullable NSLocale *)locale atIndex:(NSUInteger)index fromIndex:(NSUInteger)fromIndex;
 @end

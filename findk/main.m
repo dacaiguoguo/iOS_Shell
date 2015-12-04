@@ -32,8 +32,9 @@ int main(int argc, const char * argv[]) {
 //        NSLog(@"dacaiguoguo:\n%s\n%@",__func__,[fileContent substringWithRange:NSMakeRange(start, end)]);
 //        NSString *shengrangeString = [fileContent substringWithRange:NSMakeRange(findrange.location, fileContent.length - findrange.location)];
 //        NSLog(@"dacaiguoguo:\n%s\n%@",__func__,shengrangeString);
-        NSRange findrange = ([fileContent rangeOfString:@"{"]);
-        findrange = findDiJi(6, fileContent,@"{",0);
+        NSRange findrange;// = ([fileContent rangeOfString:@"{"]);
+        findrange = [fileContent rangeOfString:@"{" atIndex:6 fromIndex:0];
+//        findrange = findDiJi(6, fileContent,@"{",0);
         if (findrange.location == NSNotFound) {
             NSLog(@"NSNotFound");
         } else {
