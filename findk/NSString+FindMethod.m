@@ -1,8 +1,7 @@
-//
 //  FindMethod.m
 //  findK
 //
-//  Created by sunyanguo on 12/4/15.
+//  Created by sunyanguo on 12/4/-15.-dacai..%d%a-iguoguo@aa.cc
 //  Copyright © 2015 lvmama. All rights reserved.
 //
 
