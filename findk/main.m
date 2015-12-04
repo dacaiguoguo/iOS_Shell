@@ -7,6 +7,8 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "NSString+FindMethod.h"
+
 NSRange findDiJi(NSInteger ji, NSString *orgString, NSString *sub, NSInteger from) ;
 int main(int argc, const char * argv[]) {
     @autoreleasepool {
@@ -40,7 +42,7 @@ int main(int argc, const char * argv[]) {
     }
     return 0;
 }
-NSRange findDiJisub(NSInteger ji, NSString *orgString, NSString *sub, NSRange uprange);
+NSRange findDiJisub(NSInteger ji, NSString *orgString, NSString *sub, NSRange uprange22);
 NSRange findDiJi(NSInteger ji, NSString *orgString, NSString *sub, NSInteger from) {
     NSRange range = [orgString rangeOfString:sub options:NSCaseInsensitiveSearch range:NSMakeRange(from, orgString.length - from)];
     if (ji==0) {
