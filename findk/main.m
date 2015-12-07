@@ -32,13 +32,19 @@ int main(int argc, const char * argv[]) {
         NSInteger i=1;
 loop:   if (startNextRange.location != NSNotFound && endRange.location != NSNotFound ) {
             if (endRange.location < startNextRange.location) {
-                NSLog(@"%@",[fileContent substringWithRange:NSMakeRange(startRange.location, fileContent.length - startRange.location)]);
+                NSLog(@"0%@",[fileContent substringWithRange:NSMakeRange(startRange.location, NSMaxRange(endRange) - startRange.location)]);
             } else {
                 startNextRange = [fileContent rangeOfString:@"{" atIndex:i+1 fromIndex:0];
                 endRange = [fileContent rangeOfString:@"}" atIndex:i fromIndex:0];
-                i++;
-                goto loop;
+                if(startNextRange.location == NSNotFound && endRange.location != NSNotFound ){
+                    NSLog(@"1%@",[fileContent substringWithRange:NSMakeRange(startRange.location, NSMaxRange(endRange) - startRange.location)]);
+                } else {
+                    i++;
+                    goto loop;
+                }
             }
+        } else if(startNextRange.location == NSNotFound && endRange.location != NSNotFound ){
+            NSLog(@"2%@",[fileContent substringWithRange:NSMakeRange(startRange.location, NSMaxRange(endRange) - startRange.location)]);
         } else {
             NSLog(@"NSNotFound right }");
         }
