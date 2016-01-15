@@ -3,70 +3,60 @@
 ##js调用native方法
 
 1. 方法名通过接口实现映射关系，对应iOS或者安卓的真实的方法名，内置一份，以后可通过接口更新
-2. 是否需要返回值，以json中 needReturnValue 判断
-3. 返回值类型由json中 returnType 指定 string | array | dictionary
-native返回值统一以json返回。字符串或者字典或者数组
-4. 响应状态 status "0" 为正常响应了方法， 非0为异常
-
-a:返回字符串
+2. 一定需要返回值
+3. 返回值类型由json中 returnType 指定一定为  dictionary
+4. 响应状态 status "1" 为正常响应了方法， 负数为异常
+e.g. 跳转门票详情页面的json
 ```json
 {
-"status": "0", 
-"returnValue": "something"
-}
-```
-b:返回字典
-```json
-{
-"returnValue": {
-"bo": "place",
-"poo": "beijing"
-},
-"status":"0"
-}
-```
-c:返回数组
-```json
-{
-"returnValue": [
-"a",
-"b",
-"c"
-],
-"status":"0"
+    "methodName": "goPage", 
+    "parameter": {
+        "className": "placeDetail", 
+        "productId": "2342343"
+    }, 
+    "callback": "callbackName"
 }
 ```
 
-不需要返回值的例子：
-跳转门票详情页面的json
+成功返回数据
 ```json
 {
-"parameter": {
-"className": "placeDetail", 
-"productId": "2342343"
-}, 
-"methodName": "goPage", 
-"needReturnValue": "0"
+    "status": "1", 
+    "returnValue": {
+        "foo": "beijing", 
+        "bo": "place"
+    }
 }
 ```
-不需要返回值的例子：
-刷新webview的json
-```json
+调用的方法没有返回值但为空
+```
 {
-"parameter": {
-}, 
-"methodName": "refreshWebView", 
-"needReturnValue": "0"
+    "status": "1", 
+    "returnValue": {
+    }
 }
 ```
-需要返回值为字典的例子：
+解析json错误
+```
 {
-"parameter": {
-}, 
-"methodName": "refreshWebView", 
-"needReturnValue": "1",
-"returnType":"dictionary"
+    "status": "-4", 
+    "message": "parse error"
 }
+```
+解析json有异常
+```
+{
+    "status": "-2", 
+    "message": "parse exception error"
+}
+```
+调用的方法native 声明为void 
+```
+{
+    "status": "1", 
+    "message": "return type is void"
+}
+```
 
 
 ##native调用js方法
@@ -111,3 +101,4 @@ c:返回数组
 }
 ```
 
+对应关系应该放在h5那边，由h5封装并映射到安卓或者iOS的真实方法
