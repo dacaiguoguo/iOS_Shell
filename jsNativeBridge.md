@@ -7,7 +7,7 @@
 3. 返回值类型由json中 returnType 指定一定为  dictionary
 4. callback字段为JS调起Native页面后，Native 在触发某一事件的时候调用的JS方法
 5. 响应状态 status "1" 为正常响应了方法， 负数为异常
-6. 为支持JS可以调起Native的页面，Native需要支持传人json(json中包含所需参数)进行页面跳转
+6. 为支持JS可以调起Native的页面，Native需要支持传入json(json中包含所需参数)进行页面跳转
 
 e.g. 跳转门票详情页面的json
 ```json
