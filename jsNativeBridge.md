@@ -65,6 +65,7 @@ e.g. 跳转门票详情页面的json
 ##Native调用JS方法
 
 Native 通过发json给js，来实现调用js方法returnType 为native需要js返回的数据类型
+
 1. 把现有的Native调用JS的方法约定好
 2. js 通过 responseCallback 把数据返回给native
 3. 不需要返回值
