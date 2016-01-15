@@ -56,7 +56,7 @@ e.g. 跳转门票详情页面的json
 调用的方法native 声明为void 
 ```
 {
-    "status": "1", 
+    "status": "-1", 
     "message": "return type is void"
 }
 ```
@@ -77,6 +77,190 @@ json格式
     "parameter": {
         "name":"122",
         "tel":"13311110000"
-    }, 
+    } 
+}
+```
+
+iOS 提供的方法
+返回 布尔 是否调用成功 如下
+```json
+{
+    "status": "1", 
+    "returnValue": {
+        "success": true
+    }
+}
+```
+1. 隐藏导航条 lvJSHideNativeNavigationBar:
+```
+{
+    "methodName": "hideNativeNavigationBar", 
+    "parameter": {
+        "animate": "1" //是否动画
+    }
+}
+```
+2. 显示导航条 lvJSShowNativeNavigationBar:
+```
+{
+    "methodName": "showNativeNavigationBar", 
+    "parameter": {
+        "animate": "1" //是否动画
+    }
+}
+```
+3. 显示导航条 lvJSRefreshWebView:
+```
+{
+    "methodName": "refreshWebView", 
+    "parameter": {
+        "animate": "1" //是否动画
+    }
+}
+```
+4. 后退一个页面 lvJSBackPage:
+```
+{
+    "methodName": "backPage", 
+    "parameter": {
+        "animate": "1" //是否动画
+    }
+}
+```
+5. 页面跳转 lvJSGoClass:
+```
+{
+    "methodName": "goPage", 
+    "parameter": {
+        "className": "placeDetail", //类名
+        "productId": "2342343"//参数
+        .......
+    }
+}
+```
+6. 显示分享 lvJSTouchShare:
+```
+{
+    "methodName": "showShare", 
+    "parameter": {
+    }
+}
+```
+7. 取本地存储信息 lvJSGetUserDefaultWithKey:
+```
+{
+    "methodName": "getDataFromUserDefault", 
+    "parameter": {
+        "key": "searchHistory", //key
+    }
+}
+```
+返回如下
+```json
+{
+    "status": "1", 
+    "returnValue": {
+        "searchHistory": [
+            "北京",
+            "上海"
+        ]
+    }
+}
+```
+
+8. 显示导航条 lvJSVoiceShow:
+```
+{
+    "methodName": "showVoice", 
+    "parameter": {
+    }
+}
+```
+
+9. 打开通讯录 lvJSOpenContacts:
+```
+{
+    "methodName": "openContacts", 
+    "parameter": {
+    }
+}
+```
+
+10. 打开扫描二维码 lvJSOpenQRCodeScan:
+```json
+{
+    "methodName": "openQRCodeScan", 
+    "parameter": {
+    }
+}
+```
+11. 打开文件上传 lvJSFileUpLoad:
+```json
+{
+    "methodName": "openFileUpLoad", 
+    "parameter": {
+    }
+}
+```
+12. 打开文件下载 lvJSFileDownLoad:
+```json
+{
+    "methodName": "openFileDownLoad", 
+    "parameter": {
+    }
+}
+```
+13. 数据统计接口 lvJSDataStatistics:
+```json
+{
+    "methodName": "dataStatistics", 
+    "parameter": {
+    }
+}
+```
+14. 数据统计接口 lvJSGetLocation:
+```json
+{
+    "methodName": "getLocation", 
+    "parameter": {
+    }
+}
+```
+
+15. 显示Loading lvJSShowLoading:
+```json
+{
+    "methodName": "showLoading", 
+    "parameter": {
+    }
+}
+```
+
+16. 隐藏Loading lvJSHideLoading:
+```json
+{
+    "methodName": "hideLoading", 
+    "parameter": {
+    }
+}
+```
+
+17. 对字符串进行MD5，并将值返回 lvJSGetMd5:
+```json
+{
+    "methodName": "getMd5", 
+    "parameter": {
+        "string":"aaa"//需要md5的字符串
+    }
+}
+```
+```
+返回如下
+```json
+{
+    "status": "1", 
+    "returnValue": {
+        "md5": "fdsfjdslf43k4jr43jl5"
+    }
 }
 ```
