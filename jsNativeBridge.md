@@ -1,11 +1,14 @@
-#js native 相互调用规则
+#JS Native 相互调用规则
 
-##js调用native方法
+##JS调用Native方法
 
 1. 方法名通过接口实现映射关系，对应iOS或者安卓的真实的方法名，内置一份，以后可通过接口更新
 2. 一定需要返回值
 3. 返回值类型由json中 returnType 指定一定为  dictionary
-4. 响应状态 status "1" 为正常响应了方法， 负数为异常
+4. callback字段为JS调起Native页面后，Native 在触发某一事件的时候调用的JS方法
+5. 响应状态 status "1" 为正常响应了方法， 负数为异常
+6. 为支持JS可以调起Native的页面，Native需要支持传人json(json中包含所需参数)进行页面跳转
+7. 
 e.g. 跳转门票详情页面的json
 ```json
 {
@@ -64,6 +67,8 @@ e.g. 跳转门票详情页面的json
 1. native 通过发json给js，来实现调用js方法returnType 为native需要js返回的数据类型
 2. 方法名通过接口实现映射关系，对应iOS或者安卓的真实的方法名，内置一份，如需
 更新需升级客户端版本
+3. 把现有的Native调用JS的方法约定好
+4. 
 3. js 通过 responseCallback 把数据返回给native。 json格式
 
 ```json
