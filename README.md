@@ -1,5 +1,5 @@
 
-####递归目录压缩图片宽度640，适用UI给的图比较大的时候，预览速度慢的时候
+#### 递归目录压缩图片宽度640，适用UI给的图比较大的时候，预览速度慢的时候
 ```
 function zippngTo640Width(){ 
 	for file in `ls $1 | grep png` 
@@ -30,7 +30,7 @@ function provisioningFileToPlist(){
 	cd $pwddir
 }
 ```
-####递归目录 查找xib中的系统加粗字体
+#### 递归目录 查找xib中的系统加粗字体
 ```
 function findxibBoldSystemFontAll(){ 
 	for file in `ls $1 | grep xib` 
@@ -45,7 +45,7 @@ function findxibBoldSystemFontAll(){
 	done
 }
 ```
-####递归目录 查找xib中的系统字体
+#### 递归目录 查找xib中的系统字体
 ```
 function findxibSystemFontAll(){ 
 	for file in `ls $1 | grep xib` 
@@ -60,7 +60,7 @@ function findxibSystemFontAll(){
 	done
 }
 ```
-####iOS 8 以下 Autolayout不能用Margin 递归目录  查找xib中的Margin
+#### iOS 8 以下 Autolayout不能用Margin 递归目录  查找xib中的Margin
 ```
 function findxibMarginfirstAll(){ 
 	for file in `ls $1 | grep xib` 
@@ -76,14 +76,14 @@ function findxibMarginfirstAll(){
 }
 ```
 
-###显示app的签名信息
+### 显示app的签名信息
 ```
 codesign --display -r- Payload/test.app 
 ```
 vps
 
 
-###linkmap.js 运行
+### linkmap.js 运行
 在centos上安装node.js 然后运行下面命令
 ```
 node linkmap.js /home/centos/Lvmm-LinkMap-normal-arm64.txt -hl
